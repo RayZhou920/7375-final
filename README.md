@@ -3,7 +3,37 @@
 ### Report and Video
 
 [Report](./REPORT.pdf)
-[Video]()
+[Video](https://www.youtube.com/watch?v=idEpmh0qCdA)
+
+### Prompts used in the video demonstration
+
+###### Should return answers and resources
+
+What is MongoDB?<br><br>
+
+###### Should return answers and resources
+
+How do I create an index in mongodb?<br><br>
+
+###### Should return an answer that is relate to the previous one
+
+Then according to what you said, what are the benefits of using indexes in mongodb?<br><br>
+
+###### Should say don't know and no answer
+
+What is pinecone?<br><br>
+
+###### Should return some examples and resources
+
+What can mongodb do for my app?<br><br>
+
+###### Should return one example because I narrow the range of my question
+
+What can mongodb do for my app? Can you give me an example of e-commerce website?<br><br>
+
+###### Should return one sensitive example because I make the question more specific
+
+What can mongodb do for my app? Can you give me an example of e-commerce website? Notice that my website needs to be very scalable. Then what is the best practice of using mongodb in this scenario?<br><br>
 
 ### Domain Selection:
 
