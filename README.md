@@ -1,5 +1,10 @@
 # info7375-chatbot-rag-vector-db
 
+### Report and Video
+
+[Report](./REPORT.pdf)
+[Video]()
+
 ### Domain Selection:
 
 Domain: A chatbot to help users understand MongoDB official website
