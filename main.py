@@ -12,7 +12,6 @@ from rag import run_llm
 def create_sources_string(source_urls: Set[str]) -> str:
     if not source_urls:
         return ""
-    # fetch the top K (K <= 3) data entries
     sources_list = list(source_urls)[0:3]
     sources_list.sort()
     sources_string = ""
@@ -34,6 +33,7 @@ if (
 
 
 prompt = st.text_input(
+    
     "Prompt", placeholder="Enter your question here..."
 ) or st.button("Submit")
 

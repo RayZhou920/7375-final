@@ -2,9 +2,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# from langchain_core.output_parsers import StrOutputParser
-# from langchain_core.runnables import RunnablePassthrough
 from typing import Any, Dict, List
 from langchain import hub
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -17,18 +16,20 @@ from langchain_pinecone import PineconeVectorStore
 
 
 INDEX_NAME = "mongodb-doc-index"
+MODEL_NAME = "text-embedding-3-small"
+TEMPERATURE = 0
 
 
 def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+    embeddings = OpenAIEmbeddings(model=MODEL_NAME)
     docsearch = PineconeVectorStore(
         index_name=INDEX_NAME, embedding=embeddings
     )
-    chat = ChatOpenAI(verbose=True, temperature=0)
+    chat = ChatOpenAI(verbose=True, temperature=TEMPERATURE)
 
     rephrase_prompt = hub.pull("langchain-ai/chat-langchain-rephrase")
-
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
+
     stuff_documents_chain = create_stuff_documents_chain(
         chat, retrieval_qa_chat_prompt
     )

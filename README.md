@@ -2,80 +2,35 @@
 
 ### Report and Video
 
-[Report](./REPORT.pdf)
-[Video](https://www.youtube.com/watch?v=idEpmh0qCdA)
-
-### Prompts used in the video demonstration
-
-###### Should return answers and resources
-
-What is MongoDB?<br><br>
-
-###### Should return answers and resources
-
-How do I create an index in mongodb?<br><br>
-
-###### Should return an answer that is relate to the previous one
-
-Then according to what you said, what are the benefits of using indexes in mongodb?<br><br>
-
-###### Should say don't know and no answer
-
-What is pinecone?<br><br>
-
-###### Should return some examples and resources
-
-What can mongodb do for my app?<br><br>
-
-###### Should return one example because I narrow the range of my question
-
-What can mongodb do for my app? Can you give me an example of e-commerce website?<br><br>
-
-###### Should return one sensitive example because I make the question more specific
-
-What can mongodb do for my app? Can you give me an example of e-commerce website? Notice that my website needs to be very scalable. Then what is the best practice of using mongodb in this scenario?<br><br>
-
-### Domain Selection:
-
-Domain: A chatbot to help users understand MongoDB official website
-Scope: Provide information about MongoDB and its affiliated products.
+[Report](./Ruis_Report.pdf)
+[Video](https://youtu.be/3rSdGStHiIc)
 
 ### Installation
 
-1. Clone the repository
-2. `cd your-repository`
-3. `pipenv shell` to create a virtual environment
-4. `pipenv install` to install all the required packages
+1. Clone the repository.
+2. Navigate to your repository directory: ‘cd your-repository’.
+3. Create a virtual environment: 'pipenv shell'.
+4. Install the required packages: 'pipenv install'.
 5. Set up environment variables:
    Create a `.env` file in the root directory of your project and add your Pinecone API key, OpenAI API key
    ```
    PINECONE_API_KEY=
    OPENAI_API_KEY=
    ```
-6. To fetch data from MongoDB website
-   ```
+6. Fetch data from the MongoDB website:
    mkdir mongodb-docs
    wget -r -P mongodb-docs -E https://www.mongodb.com/docs/manual
-   ```
-7. Pre-process data, run the `process_data.py` script.
-   It will show the below if successful.
-   ```
+7. Pre-process the data by running the process_data.py script. You should see the following message if successful:
    Going to add xxx to Pinecone
-   ****Loading to vectorstore done ***
-   ```
-8. Start the app by `streamlit run main.py`
+   Loading to vectorstore done
+8. Start the app: streamlit run main.py.
 
-### Notes
-
-Ensure you have the necessary API keys and access for Pinecone and OpenAI.
-Modify the INDEX_NAME if you want to use a different index name in Pinecone.
 
 ### Explanation of pre-processing data
 
 #### Pass data to vector database (Pinecone) using `process_data.py`
 
-`wget -r -P mongodb-docs -E https://www.mongodb.com/docs/manual`
-This command gets documents data from MongoDB's documentation website, processes them, and stores them in a Pinecone Vector Store for efficient retrieval and embedding using OpenAI's embedding model.
+The command wget -r -P mongodb-docs -E https://www.mongodb.com/docs/manual retrieves documents from MongoDB's documentation website, processes them, and stores them in a Pinecone Vector Store for efficient retrieval and embedding using OpenAI's embedding model.
 
 #### Features
 
@@ -93,21 +48,6 @@ This command gets documents data from MongoDB's documentation website, processes
 - langchain-openai
 - langchain-pinecone
 - Pinecone account and API key
-
-#### Functionality
-
-##### `ingest_docs()`
-
-This function:
-
-1. Loads documents from MongoDB documentation using `ReadTheDocsLoader`.
-2. Splits documents into smaller chunks using `RecursiveCharacterTextSplitter`.
-3. Updates the source URL metadata of each document.
-4. Adds the processed documents to a Pinecone Vector Store using `PineconeVectorStore.from_documents`.
-
-##### Main Execution
-
-The script runs the `ingest_docs()` function when executed as the main module.
 
 ### Explanation of RAG (Retrieval-Augmented Generation) Script (rag.py)
 
