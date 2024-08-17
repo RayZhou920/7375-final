@@ -15,6 +15,7 @@ langchain-community = "*"
 langchainhub = "*"
 python-dotenv = "*"
 beautifulsoup4 = "*"
+langsmith = "*"
 
 [dev-packages]
 
