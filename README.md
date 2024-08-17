@@ -25,6 +25,10 @@
    Loading to vectorstore done
 8. Start the app: streamlit run main.py.
 
+## fine-tuning
+
+[7375-final-fine-tuning](https://github.com/RayZhou920/7375-final-fine-tuning)
+
 ### Contact me
 zhou.rui3@northeasten.edu
 
