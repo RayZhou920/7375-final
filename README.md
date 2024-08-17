@@ -3,7 +3,7 @@
 ### Report and Video
 
 [Report](./Ruis_Report.pdf)
-[Video](https://youtu.be/3rSdGStHiIc)
+[Video](https://youtu.be/Uy3r3dwK4ag)
 
 ### Installation
 
