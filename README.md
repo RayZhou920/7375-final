@@ -1,4 +1,4 @@
-# info7375-chatbot-rag-vector-db
+# info7375-final
 
 ### Report and Video
 
