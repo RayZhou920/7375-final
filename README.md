@@ -25,60 +25,7 @@
    Loading to vectorstore done
 8. Start the app: streamlit run main.py.
 
+### Contact me
+zhou.rui3@northeasten.edu
 
-### Explanation of pre-processing data
-
-#### Pass data to vector database (Pinecone) using `process_data.py`
-
-The command wget -r -P mongodb-docs -E https://www.mongodb.com/docs/manual retrieves documents from MongoDB's documentation website, processes them, and stores them in a Pinecone Vector Store for efficient retrieval and embedding using OpenAI's embedding model.
-
-#### Features
-
-- Loads documents from MongoDB documentation.
-- Splits documents into smaller chunks for efficient processing.
-- Updates document metadata with the correct source URLs.
-- Adds processed documents to a Pinecone Vector Store.
-
-#### Requirements
-
-- Python 3.x
-- python-dotenv
-- langchain
-- langchain-community
-- langchain-openai
-- langchain-pinecone
-- Pinecone account and API key
-
-### Explanation of RAG (Retrieval-Augmented Generation) Script (rag.py)
-
-This Python script implements a Retrieval-Augmented Generation (RAG) model using LangChain, OpenAI, and Pinecone. The script retrieves relevant documents based on a query, incorporates chat history, and generates responses using OpenAI's language models.
-
-#### Features
-
-- Embeds documents using OpenAI's embedding model.
-- Retrieves documents from Pinecone Vector Store.
-- Rephrases queries and performs retrieval-based question answering.
-- Combines retrieved documents to generate a response.
-
-#### Requirements
-
-- Python 3.x
-- python-dotenv
-- langchain
-- langchain-openai
-- langchain-pinecone
-- Pinecone account and API key
-- OpenAI API key
-
-#### Functionality
-
-##### `run_llm()`
-
-This function:
-
-1. Initializes OpenAI embeddings and Pinecone Vector Store.
-2. Sets up a chat model with OpenAI's language model.
-3. Pulls prompts for rephrasing queries and retrieval-based question answering.
-4. Creates a history-aware retriever and a retrieval chain.
-5. Invokes the retrieval chain with the input query and chat history.
-6. Returns the generated result.
+I would like NOT to share the project on public platforms.
